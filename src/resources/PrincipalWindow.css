@@ -3,6 +3,11 @@
 	src: url('fonts/Home-Education.otf');
 }
 
+@font-face{
+	font-family: 'Bebas Neue';
+	src: url('fonts/BebasNeue-Regular.ttf');
+}
+
 .label {
     -fx-font-family: 'Home Education DEMO';
     -fx-font-size: 39;
@@ -13,6 +18,7 @@
 .button {
     -fx-font-family: 'Home Education DEMO';
     -fx-font-size: 30;
-    //-fx-text-fill: black;
+    -fx-text-fill: black;
+    //-fx-background-color: black;
     -fx-background-color: linear-gradient(to top right, #F26419, #F6AE2D);
 }
