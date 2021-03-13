@@ -1,0 +1,18 @@
+@font-face{
+	font-family: 'Home Education DEMO';
+	src: url('fonts/Home-Education.otf');
+}
+
+.label {
+    -fx-font-family: 'Home Education DEMO';
+    -fx-font-size: 39;
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+}
+
+.button {
+    -fx-font-family: 'Home Education DEMO';
+    -fx-font-size: 30;
+    //-fx-text-fill: black;
+    -fx-background-color: linear-gradient(to top right, #F26419, #F6AE2D);
+}
