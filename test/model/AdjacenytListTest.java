@@ -6,6 +6,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import graph.AdjacencyList;
+
 class AdjacenytListTest {
 
 private AdjacencyList<String> g;

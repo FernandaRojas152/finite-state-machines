@@ -1,4 +1,4 @@
-package model;
+package graph;
 
 public class Edge<T> implements Comparable<Edge<T>> {
 	

@@ -7,6 +7,11 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
+import graph.AdjacencyMatrix;
+import graph.Edge;
+import graph.GraphAlgorithms;
+import graph.IGraph;
+
 class GraphAlgorithmsTest {
 	
 	private IGraph<String> graph;

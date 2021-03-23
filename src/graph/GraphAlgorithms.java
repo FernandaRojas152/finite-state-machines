@@ -1,10 +1,10 @@
-package model;
+package graph;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import model.IGraph;
+import graph.IGraph;
 
 public class GraphAlgorithms<T> {
 	
@@ -21,7 +21,7 @@ public class GraphAlgorithms<T> {
 	 * @return A list with a resultant order due to a BFS
 	 */
 	public static <T> List<T> bfs(IGraph<T> g, T node){
-		return traversal(g, node, new model.Queue<T>());
+		return traversal(g, node, new graph.Queue<T>());
 	}
 	
 	/**
@@ -32,7 +32,7 @@ public class GraphAlgorithms<T> {
 	 * @return A list with a resultant order due to a DFS
 	 */
 	public static <T> List<T> dfs (IGraph<T> g, T node){
-		return traversal(g, node, new model.Stack<T>());
+		return traversal(g, node, new graph.Stack<T>());
 	}
 
 	/**
