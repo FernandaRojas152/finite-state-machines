@@ -13,13 +13,13 @@ public class State {
 	private char[] result;
 	private int current;
 	private int prevC;
-	private ArrayList<State> prevState;
+	private ArrayList<State> suState;
 	
 	public State(String name, char[] result) {
 		this.name= name;
 		visited= false;
 		this.result= result;
-		prevState= new ArrayList<State>();
+		suState= new ArrayList<State>();
 	}
 
 	public boolean isVisited() {
@@ -61,12 +61,21 @@ public class State {
 	public void setPrevC(int prevC) {
 		this.prevC = prevC;
 	}
-
-	public ArrayList<State> getPrevState() {
-		return prevState;
+	
+	
+	public ArrayList<State> getSuState() {
+		return suState;
 	}
 
-	public void setPrevState(ArrayList<State> prevState) {
-		this.prevState = prevState;
+	public void setSuState(ArrayList<State> suState) {
+		this.suState = suState;
+	}
+
+	public void addsuState(State state) {
+		suState.add(state);
+	}
+	
+	public void changeCurrent() {
+		prevC= current;
 	}
 }
