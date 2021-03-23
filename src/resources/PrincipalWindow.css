@@ -8,9 +8,33 @@
 	src: url('fonts/BebasNeue-Regular.ttf');
 }
 
+#pane{
+	-fx-background-color: #FEFAEE; 
+}
+
+#title{
+    -fx-font-family: 'Bebas Neue';
+    -fx-font-size: 65;
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+}
+
+#finish{
+    -fx-font-family: 'Home Education DEMO';
+    -fx-font-size: 15;
+    -fx-text-fill: black;
+    //-fx-background-color: black;
+    -fx-background-color: linear-gradient(to top right, #E17A7F, #EBA6A9, #FFC6AC);
+}
+
 .label {
+<<<<<<< HEAD
     -fx-font-family: 'Bebas Neue';
     -fx-font-size: 39;
+=======
+    -fx-font-family: 'Home Education DEMO';
+    -fx-font-size: 25;
+>>>>>>> design
     -fx-text-fill: black;
     -fx-font-weight: bold;
 }
