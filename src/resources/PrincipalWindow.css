@@ -30,12 +30,14 @@
 .label {
     -fx-font-family: 'Home Education DEMO';
     -fx-font-size: 25;
+    -fx-font-family: 'Bebas Neue';
+    -fx-font-size: 39;
     -fx-text-fill: black;
     -fx-font-weight: bold;
 }
 
 .button {
-    -fx-font-family: 'Home Education DEMO';
+    -fx-font-family: 'Bebas Neue';
     -fx-font-size: 30;
     -fx-text-fill: black;
     //-fx-background-color: black;
