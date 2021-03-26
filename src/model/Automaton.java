@@ -196,6 +196,28 @@ public class Automaton {
 		}
 		return ans;
 	}
+	
+	public ArrayList<State> getMinimizedAutomaton(){
+		ArrayList<ArrayList<State>> list = FPartition();
+		ArrayList<State> newA = new ArrayList<>();	
+		State s;
+		int index = 0;
+		for (int i = 0; i < list.size(); i++) {
+			String name = "Q" + index;
+			index++;
+			char[] arr = list.get(i).get(0).getResult();
+			s = new State(name, arr);
+			newA.add(s);
+		}
+		for (int i = 0; i < newA.size(); i++) {
+			for (int j = 0; j < stimuli.length; j++) {
+				
+				int n = list.get(i).get(0).getSuState().get(j).getCurrent();
+				newA.get(i).addsuState(newA.get(n));
+			}	
+		}
+		return newA;
+	}
 
 	public void moore() {
 
