@@ -15,7 +15,7 @@ public class Automaton {
 	private char[] stimuli;
 	private char[] outputs;
 	
-	private HashMap<State, Integer> index;
+	private HashMap<State, Integer> ind;
 	
 	public Automaton(String type, ArrayList<State> states, char[] stimuli, char[] outputs) {
 		
@@ -24,14 +24,14 @@ public class Automaton {
 		this.states = states;
 		this.stimuli = stimuli;
 		this.outputs = outputs;
-		index = new HashMap<>();
+		ind = new HashMap<>();
 		generateIndex();
 		
 	}
 
 	private void generateIndex(){
 		for (int i = 0; i < states.size(); i++) {
-			index.put(states.get(i), i);
+			ind.put(states.get(i), i);
 		}
 	}
 
@@ -68,20 +68,20 @@ public class Automaton {
 			s.setVisited(false);
 		}
 
-		Stack<State> stack = new Stack<State>();
+		Stack<State> st = new Stack<State>();
 		boolean[] visited = new boolean[states.size()];
-		State start = states.get(0);
-		stack.push(start);
+		State begin = states.get(0);
+		st.push(begin);
 
-		while (!stack.isEmpty()){
-			State current = stack.pop();
-			int ind = index.get(current);
-			visited[ind] = true;
-			states.get(ind).setVisited(true);
+		while (!st.isEmpty()){
+			State curr = st.pop();
+			int i = ind.get(curr);
+			visited[i] = true;
+			states.get(i).setVisited(true);
 
-			for (State s : current.getSuState()) {
-				if (!visited[index.get(s)]) {
-					stack.push(s);
+			for (State s : curr.getSuState()) {
+				if (!visited[ind.get(s)]) {
+					st.push(s);
 				}
 			}
 			
@@ -89,53 +89,47 @@ public class Automaton {
 	}
 	
 	private ArrayList<ArrayList<State>> getFstPartition(){ 
+		ArrayList<State> tSta = getLinked();
 
-		ArrayList<State> cSta = getLinked();
-
-		for (State state : cSta) {
+		for (State state : tSta) {
 			state.setVisited(false);
 		}
 
 		ArrayList<ArrayList<State>> list = new ArrayList<>();
 		ArrayList<State> block;
+		String c;
 		String c1;
-		String c2;
 		int enumerate = 0;
 
-		for (int i = 0; i < cSta.size()-1; i++) {
+		for (int i = 0; i < tSta.size()-1; i++) {
 			
-			if (!cSta.get(i).isVisited()) {
-
-				cSta.get(i).setVisited(true);
-				cSta.get(i).setCurrent(enumerate);
-				cSta.get(i).changeCurrent();
+			if (!tSta.get(i).isVisited()) {
+				tSta.get(i).setVisited(true);
+				tSta.get(i).setCurrent(enumerate);
+				tSta.get(i).changeCurrent();
 				block = new ArrayList<>();
-				block.add(cSta.get(i));
+				block.add(tSta.get(i));
 				
-
-				for (int j = i+1; j < cSta.size(); j++) {
-					if (!cSta.get(j).isVisited()) {
+				for (int j = i+1; j < tSta.size(); j++) {
+					if (!tSta.get(j).isVisited()) {
 						
-						c1 = String.valueOf(cSta.get(i).getResult());
-						c2 = String.valueOf(cSta.get(j).getResult());
+						c = String.valueOf(tSta.get(i).getResult());
+						c1 = String.valueOf(tSta.get(j).getResult());
 
-						if (c1.equals(c2)) {
-							cSta.get(j).setVisited(true);
-							cSta.get(j).setCurrent(enumerate);
-							cSta.get(j).changeCurrent();
-							block.add(cSta.get(j));
+						if (c.equals(c1)) {
+							tSta.get(j).setVisited(true);
+							tSta.get(j).setCurrent(enumerate);
+							tSta.get(j).changeCurrent();
+							block.add(tSta.get(j));
 						}
 
 					}
 				}
-
 				list.add(block);
 				enumerate++;
 			}
-
-
 		}
-
+		
 		return list;
 	}
 
