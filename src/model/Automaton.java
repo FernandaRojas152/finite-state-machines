@@ -14,11 +14,9 @@ public class Automaton {
 	private ArrayList<State> states;
 	private char[] stimuli;
 	private char[] outputs;
-
-	
+	private String[][] matrix;
 	private HashMap<State, Integer> ind;
 	
-
 	public Automaton(String type, ArrayList<State> states, char[] stimuli, char[] outputs) {
 		this.type = type;
 		this.states = states;
@@ -139,20 +137,20 @@ public class Automaton {
 	 * @return
 	 */
 	private ArrayList<ArrayList<State>> FPartition(){
-		ArrayList<ArrayList<State>> list1 = getFstPartition();
-		ArrayList<ArrayList<State>> list2 = new ArrayList<>();
+		ArrayList<ArrayList<State>> list = getFstPartition();
+		ArrayList<ArrayList<State>> list1 = new ArrayList<>();
 		ArrayList<State> nCurrent;
 		boolean con = true;
 
 		while (con) {
 			int c = 0;
-			for (ArrayList<State> a : list1) {
+			for (ArrayList<State> a : list) {
 				for (State state : a){
 					state.setVisited(false);
 					state.changeCurrent();
 				}
 			}
-			for (ArrayList<State> current : list1) {
+			for (ArrayList<State> current : list) {
 				for (int i = 0; i < current.size(); i++) {			
 					if (current.get(i).isVisited() == false) {
 						current.get(i).setVisited(true);
@@ -168,19 +166,19 @@ public class Automaton {
 								}
 							}
 						}
-						list2.add(nCurrent);
+						list1.add(nCurrent);
 						c++;
 					}
 				}
 			}
-			if (!list1.equals(list2)) {
-				list1 = new ArrayList<>(list2);
-				list2 = new ArrayList<>();
+			if (!list.equals(list1)) {
+				list = new ArrayList<>(list1);
+				list1 = new ArrayList<>();
 			}else{
 				con = false;
 			}
 		}
-		return list2;
+		return list1;
 	} 
 
 	private boolean samePlace(State s1, State s2){
@@ -223,7 +221,44 @@ public class Automaton {
 
 	}
 
-	public void mealy() {
+	public ArrayList<State> mealy(int size) {
+		ArrayList<State> list = new ArrayList<State>();
+		HashMap<String, State> map = new HashMap<>();
+		for (int i = 1; i < matrix.length; i++) {
+			String[] c = new String[size];
+			for (int j = 1; j < matrix[i].length; j++) {
+				String[] array = matrix[i][j].split(",");
+				c[j-1] = array[1];
+			}
+			char[] cc = castArray(c);
+			String name = matrix[i][0];
+			State s = new State(name, cc);
+			map.put(name, s);
+			list.add(s);
+		}
+		for (int i = 0; i < matrix.length-1; i++) {
+			for (int j = 0; j < matrix[i].length-1; j++) {
+				String[] array = matrix[i+1][j+1].split(",");
+				String name = array[0];
+				State s = map.get(name);
+				list.get(i).addsuState(s);
+			}
+
+		}
+		return list;
+	}
+	
+	private char[] castArray(String[] array) {
+
+		char[] chars = new char[array.length];
+
+		for (int i = 0; i < array.length; i++) {
+			char c = array[i].charAt(0);
+			chars[i] = c;
+		}
+
+		return chars;
 
 	}
+
 }
