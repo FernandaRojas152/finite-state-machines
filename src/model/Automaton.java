@@ -28,7 +28,7 @@ public class Automaton {
 	}
 	
 	public Automaton() {
-		
+	
 	}
 
 	private void generateIndex(){
@@ -59,6 +59,22 @@ public class Automaton {
 
 	public void setMatrix(String[][] matrix) {
 		this.matrix = matrix;
+	}
+	
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public void setStates(ArrayList<State> states) {
+		this.states = states;
+	}
+
+	public void setStimuli(char[] stimuli) {
+		this.stimuli = stimuli;
+	}
+
+	public void setOutputs(char[] outputs) {
+		this.outputs = outputs;
 	}
 
 	public ArrayList<State> getLinked(){
@@ -148,7 +164,7 @@ public class Automaton {
 	 * 
 	 * @return
 	 */
-	private ArrayList<ArrayList<State>> FPartition(){
+	private ArrayList<ArrayList<State>> lastPartition(){
 		ArrayList<ArrayList<State>> list = getFstPartition();
 		ArrayList<ArrayList<State>> list1 = new ArrayList<>();
 		ArrayList<State> nCurrent;
@@ -208,7 +224,7 @@ public class Automaton {
 	}
 	
 	public ArrayList<State> getMinimizedAutomaton(){
-		ArrayList<ArrayList<State>> list = FPartition();
+		ArrayList<ArrayList<State>> list = lastPartition();
 		ArrayList<State> newA = new ArrayList<>();	
 		State s;
 		int index = 0;
@@ -229,8 +245,29 @@ public class Automaton {
 		return newA;
 	}
 
-	public void moore() {
+	public ArrayList<State> moore() {
+		ArrayList<State> list = new ArrayList<State>();
+		HashMap<String, State> map = new HashMap<>();
+		
+		for (int i = 1; i < matrix.length; i++) {
+			String c = matrix[i][matrix[i].length-1];
+			char ch = c.charAt(0);
+			char[] cc = new char[] {ch};
+			String name = matrix[i][0];
+			State s = new State(name, cc);
+			map.put(name, s);
+			list.add(s);
+		}
 
+		for (int i = 0; i < matrix.length-1; i++) {
+			for (int j = 1; j < matrix[i].length-1; j++) {
+				String name = matrix[i+1][j];
+				State s = map.get(name);
+				list.get(i).addsuState(s);
+			}
+		}
+		
+		return list;
 	}
 
 	public ArrayList<State> mealy(int size) {
@@ -255,12 +292,11 @@ public class Automaton {
 				State s = map.get(name);
 				list.get(i).addsuState(s);
 			}
-
 		}
 		return list;
 	}
 	
-	private char[] castArray(String[] array) {
+	public char[] castArray(String[] array) {
 
 		char[] chars = new char[array.length];
 
