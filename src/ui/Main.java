@@ -41,7 +41,7 @@ public class Main extends Application{
 			setPrincipal(fxmlLoader.getController());
 			Scene scene= new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("/resources/PrincipalWindow.css").toExternalForm());
-			primaryStage.initStyle(StageStyle.TRANSPARENT);
+			//primaryStage.initStyle(StageStyle.TRANSPARENT);
 			primaryStage.setScene(scene);
 			primaryStage.getIcons().add(new Image(Main.class.getResourceAsStream("icon.png")));
 			primaryStage.setTitle("Finite state machine");
