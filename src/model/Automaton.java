@@ -26,6 +26,10 @@ public class Automaton {
 		generateIndex();
 
 	}
+	
+	public Automaton() {
+		
+	}
 
 	private void generateIndex(){
 		for (int i = 0; i < states.size(); i++) {
@@ -47,6 +51,14 @@ public class Automaton {
 
 	public char[] getOutputs(){
 		return outputs;
+	}
+
+	public String[][] getMatrix() {
+		return matrix;
+	}
+
+	public void setMatrix(String[][] matrix) {
+		this.matrix = matrix;
 	}
 
 	public ArrayList<State> getLinked(){
