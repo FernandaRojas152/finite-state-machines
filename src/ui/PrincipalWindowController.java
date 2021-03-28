@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
+import model.Automaton;
 
 public class PrincipalWindowController {
 	
@@ -23,6 +24,18 @@ public class PrincipalWindowController {
     private TextField txtInputs;
     @FXML
     private Button btnFinish;
+    
+    @FXML
+    private TextField initialState;
+
+    @FXML
+    private TextField inputState;
+
+    @FXML
+    private Button finish;
+
+    @FXML
+    private TextField stimuli;
     private Automaton a;
 
     @FXML
@@ -53,24 +66,7 @@ public class PrincipalWindowController {
     	
     }
 
-
-    @FXML
-    private Pane pane;
-
-    @FXML
-    private Label title;
-
-    @FXML
-    private TextField initialState;
-
-    @FXML
-    private TextField inputState;
-
-    @FXML
-    private Button finish;
-
-    @FXML
-    private TextField stimuli;
+    
 
     @FXML
     void finish(ActionEvent event) {
