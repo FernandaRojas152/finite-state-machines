@@ -8,6 +8,51 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 
 public class PrincipalWindowController {
+	
+	@FXML
+    private Pane pane;
+    @FXML
+    private Label title;
+    @FXML
+    private Button btnMealy;
+    @FXML
+    private Button btnMoore;
+    @FXML
+    private TextField txtStates;
+    @FXML
+    private TextField txtInputs;
+    @FXML
+    private Button btnFinish;
+    private Automaton a;
+
+    @FXML
+    private TextField txtOutputs;;
+    
+    public void initialize() {
+    	a = new Automaton();
+    }
+
+    @FXML
+    void createStates(ActionEvent event) {
+    	if (txtStates.getText() != null && txtInputs.getText() != null && txtOutputs.getText()!= null) {	
+			String l = txtStates.getText();
+			String[] states = l.split(",");
+			String l1 = txtInputs.getText();
+			String[] inputs = l1.split(",");
+			txtStates.setEditable(false);
+			txtInputs.setEditable(false);
+			txtOutputs.setEditable(false);
+			btnMoore.setDisable(false);
+			btnMealy.setDisable(false);
+			String[][] m = new String[states.length+1][inputs.length+1];
+			a.setMatrix(m);
+		}
+    }
+    
+    public void scheme(String[] states, String[] inputs) {
+    	
+    }
+
 
     @FXML
     private Pane pane;
