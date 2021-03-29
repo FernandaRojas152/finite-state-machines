@@ -1,6 +1,6 @@
-![1_thtaZEbpOjHXZeOBcv5vOg](https://user-images.githubusercontent.com/45322807/112780624-de647700-900e-11eb-93df-3ec9b3d34e80.jpeg)
 # Automatas
 Este es un programa para permite ingresar un automata de Mealy o de Moore, y como resultado da su automata conexo y además muestra su minimo equivalente. <br>
+![1_thtaZEbpOjHXZeOBcv5vOg](https://user-images.githubusercontent.com/45322807/112780624-de647700-900e-11eb-93df-3ec9b3d34e80.jpeg)
 ## Como funciona el programa
 Ingresa los estados, entradas y salidas respectivas de la maquina. Luego se unde en 'finish' para habilitar las siguientes opciones <br>
 ![Captura de pantalla 2021-03-28 223001](https://user-images.githubusercontent.com/45322807/112783728-98f77800-9015-11eb-98fa-0b0a73cf3a23.png) <br>
