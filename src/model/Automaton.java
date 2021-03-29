@@ -36,7 +36,12 @@ public class Automaton {
 	public Automaton() {
 	
 	}
-
+	
+	/**
+	 * Este metodo genera un indice <br><br>
+	 * <b>Pre: </b> La lista de estadss no debe ser nulo <br><br>
+	 * <b>Post: </b> Genera un hashmap  <br><br>
+	 */
 	private void generateIndex(){
 		for (int i = 0; i < states.size(); i++) {
 			ind.put(states.get(i), i);
@@ -74,7 +79,11 @@ public class Automaton {
 	public void setOutputs(char[] outputs) {
 		this.outputs = outputs;
 	}
-
+	
+	/**
+	 * Este metodo conecta los estados <br><br>
+	 * @return un arreglo de estados conectados <br><br>
+	 */
 	public ArrayList<State> getLinked(){
 		dfs();
 		ArrayList<State> connectedStates = new ArrayList<>();
@@ -85,7 +94,12 @@ public class Automaton {
 		}
 		return connectedStates;
 	}
-
+	
+	 /**
+		 * Este metodo recorrer todos los nodos del grafo de manera ordenada <br><br>
+		 * <b>Pre: </b> El estado no debe ser nulo <br><br>
+		 * <b>Post: </b> El grafo ha sido recorrido  <br><br>
+		 */
 	private void dfs(){
 
 		for (State s : states) {
@@ -111,7 +125,11 @@ public class Automaton {
 
 		}
 	}
-
+	
+	/**
+	 * Este metodo genera una particion para generar el AFD <br><br>
+	 * @return La primera particion para generar el AFD <br><br>
+	 */
 	private ArrayList<ArrayList<State>> getFstPartition(){ 
 		ArrayList<State> tSta = getLinked();
 
@@ -159,8 +177,8 @@ public class Automaton {
 	}
 
 	/**
-	 * 
-	 * @return
+	 * Este metodo genera una particion para generar el AFD <br><br>
+	 * @return La ultima particion para generar el AFD <br><br>
 	 */
 	private ArrayList<ArrayList<State>> lastPartition(){
 		ArrayList<ArrayList<State>> list = getFstPartition();
@@ -206,7 +224,14 @@ public class Automaton {
 		}
 		return list1;
 	} 
-
+	
+	 /**
+		* Este metodo indica si los estados pertenecen al mismo arraylist <br><br>
+		* <b>Pre: </b> El estado no debe ser nulo <br><br>
+		*  @param El estado numero uno <br><br>
+		*  @param El estado numero dos <br><br>
+		 * @return Un booleano que indica si los estados pertenecen al mismo arraylist<br><br>
+		 */
 	private boolean samePlace(State s1, State s2){
 		boolean ans = true;
 		int m1, m2;
@@ -221,6 +246,10 @@ public class Automaton {
 		return ans;
 	}
 	
+	/**
+	 * Este metodo genera un Automata finito determinista <br><br>
+	 * @return Un Automata finito determinista <br><br>
+	 */
 	public ArrayList<State> getMinimizedAutomaton(){
 		ArrayList<ArrayList<State>> list = lastPartition();
 		ArrayList<State> newA = new ArrayList<>();	
@@ -242,7 +271,11 @@ public class Automaton {
 		}
 		return newA;
 	}
-
+	
+	/**
+	 * Este metodo genera un automata moore <br><br>
+	 * @return Un arreglo que representa el automata moore <br><br>
+	 */
 	public ArrayList<State> moore() {
 		ArrayList<State> list = new ArrayList<State>();
 		HashMap<String, State> map = new HashMap<>();
@@ -267,7 +300,12 @@ public class Automaton {
 		
 		return list;
 	}
-
+	
+	/**
+	 * Este metodo genera un automata mealy <br><br>
+	 * @param el tamano para el automata <br><br>
+	 * @return Un arreglo que representa el automata mealy <br><br>
+	*/
 	public ArrayList<State> mealy(int size) {
 		ArrayList<State> list = new ArrayList<State>();
 		HashMap<String, State> map = new HashMap<>();
@@ -294,6 +332,11 @@ public class Automaton {
 		return list;
 	}
 	
+	/**
+	 * Este metodo castea un arreglo de String en char <br><br>
+	 * @param el arreglo de string a castear <br><br>
+	 * @return Un arreglo de chars <br><br>
+	 */
 	public char[] convertArray(String[] array) {
 
 		char[] chars = new char[array.length];

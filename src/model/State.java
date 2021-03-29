@@ -9,6 +9,7 @@ import java.util.ArrayList;
  *
  */
 public class State {
+	//ATTRIBUTES
 	private boolean visited;
 	private String name;
 	private char[] result;
@@ -16,6 +17,11 @@ public class State {
 	private int prevC;
 	private ArrayList<State> suState;
 	
+	//METHODS
+	/* El constructor de un estado <br><br>
+	 * @param nombre que identifica el estado<br><br>
+	 * @param simbolo que el estado tiene como resultado  <br><br>
+	 */
 	public State(String name, char[] result) {
 		this.name= name;
 		visited= false;
