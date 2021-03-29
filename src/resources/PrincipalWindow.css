@@ -56,7 +56,9 @@
 .text-field {
     -fx-background-color: #A52422, -fx-background ;
     -fx-background-insets: 0, 0 0 1 0 ;
-    -fx-background-radius: 0 ;
+    -fx-background-radius: 0;
+    -fx-font-family: 'Home Education DEMO';
+    -fx-font-size: 15;
 }
 .text-field:focused {
     -fx-background-color: #A52422, -fx-background ;
