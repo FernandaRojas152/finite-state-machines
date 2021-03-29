@@ -19,7 +19,7 @@
     -fx-font-weight: bold;
 }
 
-#finish{
+#btnFinish{
     -fx-font-family: 'Home Education DEMO';
     -fx-font-size: 15;
     -fx-text-fill: black;
@@ -40,4 +40,15 @@
     -fx-text-fill: black;
     //-fx-background-color: black;
     -fx-background-color: linear-gradient(to top right, #E17A7F, #EBA6A9, #FFC6AC);
+}
+
+.button:pressed, .button:default:hover:pressed {
+  -fx-background-color: linear-gradient(to top right, #7D3CCD, #A97DDE, #C5BBF2);
+  -fx-text-fill: white;
+}
+
+.button:disabled, .button:default:disabled {
+    -fx-opacity: 0.4;
+    -fx-background-color: linear-gradient(to top, #9AA9AC, #5B5C71, #595959);
+    -fx-text-fill: white;
 }

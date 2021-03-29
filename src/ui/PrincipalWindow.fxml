@@ -23,14 +23,14 @@
       <Label layoutX="15.0" layoutY="129.0" prefHeight="36.0" prefWidth="83.0" text="Input" />
       <TextField fx:id="txtStates" layoutX="93.0" layoutY="95.0" />
       <TextField fx:id="txtInputs" layoutX="93.0" layoutY="132.0" />
-      <Button fx:id="btnFinish" layoutX="265.0" layoutY="129.0" mnemonicParsing="false" onAction="#createAutomaton" prefHeight="44.0" prefWidth="83.0" text="Finish" />
+      <Button fx:id="btnFinish" layoutX="253.0" layoutY="129.0" mnemonicParsing="false" onAction="#createAutomaton" prefHeight="25.0" prefWidth="83.0" text="Finish" />
       <ImageView fitHeight="25.0" fitWidth="348.0" layoutX="179.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
          <image>
             <Image url="@../resources/Rev_divider.png" />
          </image>
       </ImageView>
       <Label layoutX="13.0" layoutY="170.0" text="Output" />
-      <TextField fx:id="txtOutputs" layoutX="100.0" layoutY="176.0" />
+      <TextField fx:id="txtOutputs" layoutX="92.0" layoutY="174.0" />
       <StackPane fx:id="machinesPane" layoutX="365.0" layoutY="70.0" prefHeight="325.0" prefWidth="356.0" />
       <Button fx:id="btnSave" alignment="TOP_LEFT" disable="true" layoutX="200.0" layoutY="351.0" mnemonicParsing="false" onAction="#save" text="S" />
       <Button fx:id="btnReduce" disable="true" layoutX="258.0" layoutY="351.0" mnemonicParsing="false" onAction="#reduce" text="R" />
