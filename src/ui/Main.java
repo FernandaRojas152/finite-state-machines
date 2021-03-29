@@ -41,7 +41,6 @@ public class Main extends Application{
 			});
 			setPrincipal(fxmlLoader.getController());
 			Scene scene= new Scene(root);
-			scene.setCursor(Cursor.cursor("cursor.png"));
 			scene.getStylesheets().add(getClass().getResource("/resources/PrincipalWindow.css").toExternalForm());
 			//primaryStage.initStyle(StageStyle.TRANSPARENT);
 			primaryStage.setScene(scene);
