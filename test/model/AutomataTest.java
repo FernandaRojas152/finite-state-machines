@@ -47,7 +47,7 @@ class AutomataTest {
 		char[] stimuli = new char[]{'0', '1'};
 		char[] outputs = new char[]{'a', 'b'};
 
-		a = new Automaton("Moore", states, stimuli, outputs);
+		a = new Automaton(states, stimuli, outputs);
 
 		
 	}
@@ -90,7 +90,7 @@ class AutomataTest {
 		char[] stimuli = new char[]{'0', '1'};
 		char[] outputs = new char[]{'0', '1'};
 
-		a = new Automaton("Moore", states, stimuli, outputs);
+		a = new Automaton(states, stimuli, outputs);
 
 		
 	}

@@ -208,7 +208,7 @@ public class PrincipalWindowController {
        	txtStates.setText("");
     	txtStates.setEditable(true);
     	txtInputs.setText("");
-    	txtInputs.setEditable(true);;
+    	txtInputs.setEditable(true);
     	txtOutputs.setText("");
     	txtOutputs.setEditable(true);
 		
@@ -229,14 +229,12 @@ public class PrincipalWindowController {
     	
     	char[] i = a.castArray(inputs);
     	char[] o = a.castArray(txtOutputs.getText().split(","));
-    	String t = null;
+
     	ArrayList<State> s = null;
     	
     	if (wichIsLastCliked == 1) {
-			t = "Maely";
 			s = a.mealy(i.length);
 		}else {
-			t = "Moore";
 			s = a.moore();
 		}
     	/*a.setOutputs(o);
@@ -245,11 +243,10 @@ public class PrincipalWindowController {
     	a.setType(t);*/
     	
     	String[][] m = a.getMatrix();
-    	a = new Automaton(t, s, i, o);
+    	a = new Automaton(s, i, o);
     	a.setMatrix(m);
     	
     	btnReduce.setDisable(false);
-
     }
     
     private void createStates() {

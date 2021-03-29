@@ -10,7 +10,6 @@ import java.util.HashMap;
  */
 public class Automaton {
 	//ATRIBUTES
-	private String type;
 	private ArrayList<State> states;
 	private char[] stimuli;
 	private char[] outputs;
@@ -19,13 +18,11 @@ public class Automaton {
 	
 	/**
 	 * Constructor's method
-	 * @param type
 	 * @param states
 	 * @param stimuli
 	 * @param outputs
 	 */
-	public Automaton(String type, ArrayList<State> states, char[] stimuli, char[] outputs) {
-		this.type = type;
+	public Automaton(ArrayList<State> states, char[] stimuli, char[] outputs) {
 		this.states = states;
 		this.stimuli = stimuli;
 		this.outputs = outputs;
@@ -33,6 +30,9 @@ public class Automaton {
 		generateIndex();
 	}
 	
+	/**
+	 * Empy constructor
+	 */
 	public Automaton() {
 	
 	}
@@ -41,10 +41,6 @@ public class Automaton {
 		for (int i = 0; i < states.size(); i++) {
 			ind.put(states.get(i), i);
 		}
-	}
-
-	public String getType(){
-		return type;
 	}
 
 	public ArrayList<State> getStates(){
@@ -65,10 +61,6 @@ public class Automaton {
 
 	public void setMatrix(String[][] matrix) {
 		this.matrix = matrix;
-	}
-	
-	public void setType(String type) {
-		this.type = type;
 	}
 
 	public void setStates(ArrayList<State> states) {
