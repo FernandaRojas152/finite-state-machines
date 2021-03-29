@@ -13,7 +13,7 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
-import model.Automata;
+import model.Automaton;
 import model.State;
 
 public class PrincipalWindowController {
@@ -43,7 +43,7 @@ public class PrincipalWindowController {
     @FXML
     private Button btnNew;
     
-    private Automata a;
+    private Automaton a;
     private GridPane gridToFill; 
     private GridPane gridLastPartition;
     private TextField txt;
@@ -52,7 +52,7 @@ public class PrincipalWindowController {
     private int wichIsLastCliked;
     
     public void initialize() {
-    	a = new Automata();
+    	a = new Automaton();
     	wichIsLastCliked = -1;
     	Tooltip tt = new Tooltip();
     	tt.setText("Botón que guarda el autómata");
@@ -242,7 +242,7 @@ public class PrincipalWindowController {
     	a.setType(t);*/
     	
     	String[][] m = a.getMatrix();
-    	a = new Automata(t, s, i, o);
+    	a = new Automaton(t, s, i, o);
     	a.setMatrix(m);
     	
     	btnReduce.setDisable(false);

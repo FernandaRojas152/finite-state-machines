@@ -8,7 +8,7 @@ import java.util.HashMap;
  * @author Fernanda, Balanta, Yimar
  *
  */
-public class Automata {
+public class Automaton {
 
 	private String type;
 	private ArrayList<State> states;
@@ -17,7 +17,7 @@ public class Automata {
 	private String[][] matrix;
 	private HashMap<State, Integer> ind;
 	
-	public Automata(String type, ArrayList<State> states, char[] stimuli, char[] outputs) {
+	public Automaton(String type, ArrayList<State> states, char[] stimuli, char[] outputs) {
 		this.type = type;
 		this.states = states;
 		this.stimuli = stimuli;
@@ -27,7 +27,7 @@ public class Automata {
 
 	}
 	
-	public Automata() {
+	public Automaton() {
 	
 	}
 
