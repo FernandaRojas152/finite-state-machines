@@ -13,7 +13,7 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
-import model.Automaton;
+import model.Automata;
 import model.State;
 
 public class PrincipalWindowController {
@@ -40,8 +40,10 @@ public class PrincipalWindowController {
     private Button btnReduce;
     @FXML
     private Button btnSave;
+    @FXML
+    private Button btnNew;
     
-    private Automaton a;
+    private Automata a;
     private GridPane gridToFill; 
     private GridPane gridLastPartition;
     private TextField txt;
@@ -50,7 +52,7 @@ public class PrincipalWindowController {
     private int wichIsLastCliked;
     
     public void initialize() {
-    	a = new Automaton();
+    	a = new Automata();
     	wichIsLastCliked = -1;
     	Tooltip tt = new Tooltip();
     	tt.setText("Botón que guarda el autómata");
@@ -151,6 +153,7 @@ public class PrincipalWindowController {
 		gridLastPartition.setAlignment(Pos.CENTER);
 		TextField txt = new TextField("/"); 
 		txt.setDisable(true);
+		btnNew.setDisable(false);
 		txt.setPrefWidth(30);
 		gridLastPartition.add(txt, 0, 0);
 
@@ -197,6 +200,27 @@ public class PrincipalWindowController {
     }
     
     @FXML
+    void reset(ActionEvent event) {
+    	machinesPane.getChildren().clear();
+       	txtStates.setText("");
+    	txtStates.setEditable(true);
+    	txtInputs.setText("");
+    	txtInputs.setEditable(true);;
+    	txtOutputs.setText("");
+    	txtOutputs.setEditable(true);
+		
+    	btnMealy.setDisable(true);
+    	btnMoore.setDisable(true);
+ 
+    	btnSave.setDisable(true);
+    	btnReduce.setDisable(true);
+		
+		a.setMatrix(null) ;
+		
+		btnNew.setDisable(true);
+    }
+    
+    @FXML
     void save(ActionEvent event) {
     	createStates();
     	
@@ -218,7 +242,7 @@ public class PrincipalWindowController {
     	a.setType(t);*/
     	
     	String[][] m = a.getMatrix();
-    	a = new Automaton(t, s, i, o);
+    	a = new Automata(t, s, i, o);
     	a.setMatrix(m);
     	
     	btnReduce.setDisable(false);
