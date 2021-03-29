@@ -12,5 +12,20 @@ Este es un programa para permite ingresar un autonoma de Mealy o de Moore, y com
 - Manuel Balanta Quintero
 - Luisa Fernanda Quintero Fernandez
 
+## Como abrir el proyecto
+
+Hay dos opciones para abrir el proyecto y utilizarlo.
+
+1. IDE
+- Abrir el proyecto en un IDE
+- Ir a la carpeta ui
+- Abrir el archivo Main.java
+- Compilar
+
+2. Archivo .EXE
+- Ir a la carpeta "Ejecutable"
+- Buscar el archivo "Finite state machine.exe"
+- Dar doble clic para abrir el archivo.
+
 [![forthebadge](https://forthebadge.com/images/badges/made-with-java.svg)](https://forthebadge.com) <br>
 [![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)
