@@ -5,6 +5,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 //import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -40,10 +41,10 @@ public class Main extends Application{
 			setPrincipal(fxmlLoader.getController());
 			Scene scene= new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("/resources/PrincipalWindow.css").toExternalForm());
-			primaryStage.initStyle(StageStyle.TRANSPARENT);
+			//primaryStage.initStyle(StageStyle.TRANSPARENT);
 			primaryStage.setScene(scene);
-			//primaryStage.getIcons().add(new Image(Main.class.getResourceAsStream("")));
-			primaryStage.setTitle("Finite states");
+			primaryStage.getIcons().add(new Image(Main.class.getResourceAsStream("icon.png")));
+			primaryStage.setTitle("Finite state machine");
 			primaryStage.setResizable(false);
 			primaryStage.show();
 			primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
