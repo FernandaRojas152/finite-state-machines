@@ -9,7 +9,7 @@ import java.util.HashMap;
  *
  */
 public class Automaton {
-
+	//ATRIBUTES
 	private String type;
 	private ArrayList<State> states;
 	private char[] stimuli;
@@ -17,6 +17,13 @@ public class Automaton {
 	private String[][] matrix;
 	private HashMap<State, Integer> ind;
 	
+	/**
+	 * Constructor's method
+	 * @param type
+	 * @param states
+	 * @param stimuli
+	 * @param outputs
+	 */
 	public Automaton(String type, ArrayList<State> states, char[] stimuli, char[] outputs) {
 		this.type = type;
 		this.states = states;
@@ -24,7 +31,6 @@ public class Automaton {
 		this.outputs = outputs;
 		ind = new HashMap<>();
 		generateIndex();
-
 	}
 	
 	public Automaton() {
