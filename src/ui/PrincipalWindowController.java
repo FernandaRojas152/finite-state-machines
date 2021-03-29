@@ -41,7 +41,7 @@ public class PrincipalWindowController {
     @FXML
     private Button btnSave;
     @FXML
-    private Button btnNew;
+    private Button btnReset;
     
     private Automaton a;
     private GridPane gridToFill; 
@@ -60,6 +60,9 @@ public class PrincipalWindowController {
     	Tooltip tt1 = new Tooltip();
     	tt1.setText("Botón que genera el autómata mínimo equivalente");
     	btnReduce.setTooltip(tt1);
+    	Tooltip tt2 = new Tooltip();
+    	tt2.setText("Botón que limpia toda la ventana");
+    	btnReset.setTooltip(tt2);
     }
 
     @FXML
@@ -153,7 +156,7 @@ public class PrincipalWindowController {
 		gridLastPartition.setAlignment(Pos.CENTER);
 		TextField txt = new TextField("/"); 
 		txt.setDisable(true);
-		btnNew.setDisable(false);
+		//btnReset.setDisable(false);
 		txt.setPrefWidth(30);
 		gridLastPartition.add(txt, 0, 0);
 
@@ -217,7 +220,7 @@ public class PrincipalWindowController {
 		
 		a.setMatrix(null) ;
 		
-		btnNew.setDisable(true);
+		//btnReset.setDisable(true);
     }
     
     @FXML
@@ -264,6 +267,8 @@ public class PrincipalWindowController {
 		}
 		a.setMatrix(m);
 	}
+    
+
 
 }
 
