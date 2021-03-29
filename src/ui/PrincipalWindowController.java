@@ -93,27 +93,27 @@ public class PrincipalWindowController {
 		btnSave.setDisable(false);
 		txt = new TextField("/");
 		txt.setDisable(true);
-		txt.setPrefWidth(30);
+		txt.setPrefWidth(45);
 		gridToFill.add(txt, 0, 0);
 
 		for (int i = 0; i < states.length; i++) {
 			TextField txtN = new TextField(states[i]);
 			txtN.setDisable(true);
-			txtN.setPrefWidth(30);
+			txtN.setPrefWidth(45);
 			gridToFill.add(txtN, 0, i+1);
 		}
 
 		for (int i = 0; i < inputs.length; i++) {
 			TextField txtN = new TextField(inputs[i]);
 			txtN.setDisable(true);
-			txtN.setPrefWidth(30);
+			txtN.setPrefWidth(45);
 			gridToFill.add(txtN, i+1, 0);
 		}
 
 		for (int i = 0; i < states.length; i++) {
 			for (int j = 0; j < inputs.length; j++) {
 				TextField txtN = new TextField();
-				txtN.setPrefWidth(30);
+				txtN.setPrefWidth(45);
 				txtN.setEditable(true);
 				gridToFill.add(txtN, j+1, i+1);
 			}
