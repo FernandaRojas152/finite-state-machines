@@ -17,7 +17,6 @@ import model.Automaton;
 import model.State;
 
 public class PrincipalWindowController {
-	
 	@FXML
     private Pane pane;
     @FXML

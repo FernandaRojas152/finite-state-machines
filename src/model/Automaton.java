@@ -31,7 +31,7 @@ public class Automaton {
 	}
 	
 	/**
-	 * Empy constructor
+	 * Empty constructor
 	 */
 	public Automaton() {
 	

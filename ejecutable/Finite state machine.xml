@@ -3,7 +3,7 @@
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
   <jar>C:\Users\Ferna\Downloads\finite-state-machines\ejecutable\finite-state-machine.jar</jar>
-  <outfile>C:\Users\Ferna\Downloads\finite-state-machines\ejecutable\Finite state machines.exe</outfile>
+  <outfile>C:\Users\Ferna\Downloads\finite-state-machines\ejecutable\Finite state machine.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>
   <chdir>.</chdir>
@@ -18,7 +18,7 @@
     <path></path>
     <bundledJre64Bit>false</bundledJre64Bit>
     <bundledJreAsFallback>false</bundledJreAsFallback>
-    <minVersion>1.6.0</minVersion>
+    <minVersion>1.7.0</minVersion>
     <maxVersion>1.11.0</maxVersion>
     <jdkPreference>preferJre</jdkPreference>
     <runtimeBits>64/32</runtimeBits>
