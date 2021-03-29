@@ -277,7 +277,7 @@ public class Automaton {
 				String[] array = matrix[i][j].split(",");
 				c[j-1] = array[1];
 			}
-			char[] cc = castArray(c);
+			char[] cc = convertArray(c);
 			String name = matrix[i][0];
 			State s = new State(name, cc);
 			map.put(name, s);
@@ -294,7 +294,7 @@ public class Automaton {
 		return list;
 	}
 	
-	public char[] castArray(String[] array) {
+	public char[] convertArray(String[] array) {
 
 		char[] chars = new char[array.length];
 

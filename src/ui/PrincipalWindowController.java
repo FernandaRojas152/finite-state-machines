@@ -226,8 +226,8 @@ public class PrincipalWindowController {
     void save(ActionEvent event) {
     	createStates();
     	
-    	char[] i = a.castArray(inputs);
-    	char[] o = a.castArray(txtOutputs.getText().split(","));
+    	char[] i = a.convertArray(inputs);
+    	char[] o = a.convertArray(txtOutputs.getText().split(","));
 
     	ArrayList<State> s = null;
     	
